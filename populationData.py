@@ -21,5 +21,8 @@ def getPopulationPerHood():
 
     # TODO
     # You can return here the object with the intended format which is gonna look like
+    # "neighborhood-name" : {
+    #     "population": num
+    # }   
     return
 
