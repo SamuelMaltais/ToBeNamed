@@ -1,12 +1,21 @@
 import pandas as pd 
 from pathlib import Path 
 import json
-from flask import Flask, Response
-
-
-app = Flask(__name__)
+import os
 
 path = Path(r"C:\Users\rihaz\Dropbox\PC\Downloads\population-quartiers-anciens-territoires-administratifs.csv")
+
+# TODO This should return an object
+#
+#"neighborhood-name" : {
+#     "population": num,
+# }
+#
+#
+#
+#
+def getPopulationPerHood():
+    pass
 
 def read_csv_to_json(csv_file_path):
     
@@ -19,17 +28,10 @@ def read_csv_to_json(csv_file_path):
     
     return json_data
 
-@app.route('/get_data')
-
-def get_data():
-    csv_file_path = r"C:\Users\rihaz\Dropbox\PC\Downloads\population-quartiers-anciens-territoires-administratifs.csv"
-    json_data = read_csv_to_json(csv_file_path) 
-    print(json.dumps(json_data))
-    
-    return Response(json.dumps(json_data),content_type= "application/json")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    sdas
+    pass
 
 
 
