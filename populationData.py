@@ -1,13 +1,10 @@
 import csv
 
-
-
-
 def getPopulationPerHood():
 
     # TODO be adapted to pull from https://donnees.montreal.ca/dataset/population-recensement/resource/8dbac698-14c6-4c91-9ba8-85fdb3232c45
 
-    
+
     with open('employee_birthday.txt') as csv_file:
 
         csv_reader = csv.reader(csv_file, delimiter=',')

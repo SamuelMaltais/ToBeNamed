@@ -1,0 +1,2 @@
+def getTreeData(ourDictionnary):
+    pass

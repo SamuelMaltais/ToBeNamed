@@ -1,6 +1,12 @@
 import populationData
+import bikeData
+import treeData
 
 if __name__ == "__main__":
-    print("hello")
-    populationData.getPopulationPerHood()
+
+
+    ourDictionnary = populationData.getPopulationPerHood()
+    bikeData.getBikeData(ourDictionnary)
+    treeData.getTreeData(ourDictionnary)
+
     pass
