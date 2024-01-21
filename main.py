@@ -15,12 +15,8 @@ ourDictionnary = {}
 def get_data():
     return Response(json.dumps(ourDictionnary),content_type= "application/json")
 
-
-
-if __name__ == "__main__":
-    
-    # ourDictionnary = populationData.getPopulationPerHood()
-
+@app.route("/run")
+def run():
     ourDictionnary = {}
     bikeData.getBikeData(ourDictionnary)
     print("Done with bikes")
@@ -32,7 +28,10 @@ if __name__ == "__main__":
     print("Done with air pollution")
     #evCarsData.getEvCarsData(ourDictionnary)
     print("Done with Ev Cars Data")
+    return Response(json.dumps(ourDictionnary),content_type= "application/json")
 
+
+if __name__ == "__main__":
     print("Now listening on port 5000")
     app.run()
     pass
