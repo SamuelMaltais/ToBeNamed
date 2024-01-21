@@ -1,4 +1,3 @@
-import pandas as pd 
 from pathlib import Path 
 import json
 import os
@@ -37,7 +36,6 @@ def getPopulationPerHood(ourDictionnary):
                     quartier = "Villeray-Saint-Michel - Parc-Extension"
                 elif quartier == "Rosemont":
                     quartier = "Rosemont - La Petite-Patrie"
-                elif 
 
                 arr[2] = arr[2].replace("\n", "")
                 if(arr[2] == ""):
