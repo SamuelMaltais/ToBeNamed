@@ -64,21 +64,8 @@ def getBikeData(ourDictionnary):
     
     
     for key in ourDictionnary:
-         ourDictionnary[key]['bikes'] = ourDictionnary[key]['bikes'] / amt_of_days
+         ourDictionnary[key]['bikes'] = int(ourDictionnary[key]['bikes'] / amt_of_days)
 
 
     return ourDictionnary
 
-# print(getBikeData({}))
-
-
-obj = {}
-
-
-obj['sam'] = {
-     "networth": 2,
-     "style": "10pts"
-}
-
-
-print(obj)
