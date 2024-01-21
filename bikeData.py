@@ -9,7 +9,6 @@ def get_reverse_geocode(lat, long):
     
     load_dotenv()
     gmap_key = os.environ.get("GOOGLE_KEY", os.getenv('GOOGLE_KEY'))
-    print(gmap_key != None)
 
     gmaps = googlemaps.Client(key=gmap_key)
 
