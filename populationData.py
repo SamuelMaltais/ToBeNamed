@@ -36,6 +36,8 @@ def getPopulationPerHood(ourDictionnary):
                     quartier = "Villeray-Saint-Michel - Parc-Extension"
                 elif quartier == "Rosemont":
                     quartier = "Rosemont - La Petite-Patrie"
+                elif quartier == "Maisonneuve":
+                    quartier = "Mercier - Hochelaga-Maisonneuve"
 
                 arr[2] = arr[2].replace("\n", "")
                 if(arr[2] == ""):

@@ -16,6 +16,25 @@ def get_reverse_geocode(lat, long):
     reverse_geocode_result = gmaps.reverse_geocode((lat, long))
     arrondissement = reverse_geocode_result[0]['address_components'][2]['long_name']
 
+    if "Rue" in arrondissement:
+        arrondissement = reverse_geocode_result[0]['address_components'][3]['long_name']
+
+    if arrondissement == "Montreal" or arrondissement == "Montréal":
+          arrondissement = reverse_geocode_result[0]['address_components'][1]['long_name']
+
+    if arrondissement == "Nouveau-Rosemont":
+        arrondissement = "Rosemont - La Petite-Patrie"
+
+    elif arrondissement == "Côte-Des-Neiges—Notre-Dame-De-Grâce":
+     arrondissement = 'Côte-des-Neiges - Notre-Dame-de-Grâce'
+
+    elif arrondissement == "Ahuntsic-Cartierville":
+          arrondissement = "Ahuntsic - Cartierville"
+
+    elif arrondissement == "Villeray—Saint-Michel—Parc-Extension":
+          arrondissement = "Villeray-Saint-Michel - Parc-Extension"
+
+
     return arrondissement
 
 
@@ -54,12 +73,6 @@ def getBikeData(ourDictionnary):
             else:
                 neighborhood = get_reverse_geocode(record['latitude'], record['longitude'])
                 saved_neighborhoods[lat + long] = neighborhood
-
-            if neighborhood == "Ahuntsic-Cartierville":
-                 neighborhood = "Ahuntsic - Cartierville"
-
-            if neighborhood == "Villeray—Saint-Michel—Parc-Extension":
-                 neighborhood = "Villeray-Saint-Michel - Parc-Extension"
 
             if neighborhood in ourDictionnary:
                  ourDictionnary[neighborhood]['bikes'] += int(record['nb_passages'])

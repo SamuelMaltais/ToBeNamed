@@ -3,12 +3,15 @@ import bikeData
 import treeData
 import evCarsData
 import airPollution
-
+from flask_cors import CORS, cross_origin
 import json
 from flask import Flask, Response
 
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 ourDictionnary = {}
 
 @app.route('/get_data')
@@ -16,6 +19,10 @@ def get_data():
     with open('data.json', 'r') as f:
         data = json.load(f)
         return Response(json.dumps(data),content_type= "application/json")
+
+@app.route('/get_data_test')
+def get_data_test():
+    return Response(json.dumps(ourDictionnary),content_type= "application/json")
 
 def createData():
     ourDictionnary = {}
@@ -32,6 +39,9 @@ def createData():
     with open('data.json', 'w') as f:
         json.dump(ourDictionnary, f)
 
+    return ourDictionnary
+
+createData()
 
 if __name__ == "__main__":
 
