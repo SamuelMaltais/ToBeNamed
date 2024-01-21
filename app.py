@@ -10,10 +10,12 @@ from flask import Flask, Response
 
 app = Flask(__name__)
 cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 ourDictionnary = {}
 
 @app.route('/get_data')
+@cross_origin()
 def get_data():
     with open('data.json', 'r') as f:
         data = json.load(f)
