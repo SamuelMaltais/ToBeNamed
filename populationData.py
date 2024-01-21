@@ -22,15 +22,22 @@ def getPopulationPerHood(ourDictionnary):
                 quartier = quartier.replace("Ã¨", "è")
                 quartier = quartier.replace(" ", "")
                 quartier = quartier.replace("ÃŽ", "î")
+                quartier = quartier.replace("Ã‰", "é")
 
                 if quartier == "Mercier":
                     quartier = "Mercier - Hochelaga-Maisonneuve"
-                if quartier == "Notre-Dame-de-GrÃ¢ce":
+                elif quartier == "Notre-Dame-de-GrÃ¢ce":
                     quartier = "Côte-des-Neiges - Notre-Dame-de-Grâce"
-                if quartier == "Vileray":
+                elif quartier == "Vileray":
                     quartier = "Villeray—Saint-Michel—Parc-Extension"
-                if quartier == "Rivière-des-Prairies":
+                elif quartier == "Rivière-des-Prairies":
                     quartier = "Rivière-des-Prairies - Pointe-aux-Trembles"
+
+                elif quartier == "Villeray":
+                    quartier = "Villeray-Saint-Michel - Parc-Extension"
+                elif quartier == "Rosemont":
+                    quartier = "Rosemont - La Petite-Patrie"
+                elif 
 
                 arr[2] = arr[2].replace("\n", "")
                 if(arr[2] == ""):

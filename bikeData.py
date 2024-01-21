@@ -53,6 +53,12 @@ def getBikeData(ourDictionnary):
                 neighborhood = get_reverse_geocode(record['latitude'], record['longitude'])
                 saved_neighborhoods[lat + long] = neighborhood
 
+            if neighborhood == "Ahuntsic-Cartierville":
+                 neighborhood = "Ahuntsic - Cartierville"
+
+            if neighborhood == "Villeray—Saint-Michel—Parc-Extension":
+                 neighborhood = "Villeray-Saint-Michel - Parc-Extension"
+
             if neighborhood in ourDictionnary:
                  ourDictionnary[neighborhood]['bikes'] += int(record['nb_passages'])
             else:

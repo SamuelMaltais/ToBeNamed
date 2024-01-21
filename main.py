@@ -30,9 +30,9 @@ if __name__ == "__main__":
     print("Done with population")
     airPollution.getAirPollution(ourDictionnary)
     print("Done with air pollution")
-    evCarsData.getEvCarsData(ourDictionnary)
+    #evCarsData.getEvCarsData(ourDictionnary)
     print("Done with Ev Cars Data")
 
     print("Now listening on port 5000")
-    app.run(debug=True)
+    app.run()
     pass
