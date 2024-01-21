@@ -10,7 +10,6 @@ from flask import Flask, Response
 
 app = Flask(__name__)
 cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 ourDictionnary = {}
 
@@ -41,7 +40,6 @@ def createData():
 
     return ourDictionnary
 
-createData()
 
 if __name__ == "__main__":
 
