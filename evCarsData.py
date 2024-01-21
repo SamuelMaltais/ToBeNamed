@@ -11,6 +11,3 @@ def getEvCarsData(ourDictionnary):
             print(line)
                         
     return ourDictionnary
-
-
-getEvCarsData({})
