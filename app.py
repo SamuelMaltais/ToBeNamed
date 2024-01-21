@@ -7,14 +7,15 @@ import airPollution
 import json
 from flask import Flask, Response
 
-data = {}
 
 app = Flask(__name__)
 ourDictionnary = {}
 
 @app.route('/get_data')
 def get_data():
-    return Response(json.dumps(data),content_type= "application/json")
+    with open('data.json', 'r') as f:
+        data = json.load(f)
+        return Response(json.dumps(data),content_type= "application/json")
 
 def createData():
     ourDictionnary = {}
@@ -35,7 +36,6 @@ def createData():
 if __name__ == "__main__":
 
     print("Now listening on port 5000")
-    with open('data.json', 'r') as f:
-        data = json.load(f)
+    
 
     app.run()
